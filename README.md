@@ -3,23 +3,23 @@ Nginx proxy for virtual hosts with lets-encrips.  To use this put the folowing E
 
 e.g.
 
-  wordpress:
-    depends_on:
-      - db_uls
-    image: wordpress:latest
-    container_name: ${WP_CONTAINER}      
-    hostname: ${WP_CONTAINER}
-    restart: always
-    volumes:
-      - ./html:/var/www/html
-      - ./php.ini:/usr/local/etc/php/conf.d/php.ini
-    expose:
-      - 80
-    restart: always
-    environment:
-      VIRTUAL_HOST: ${DOMAINS}
-      LETSENCRYPT_HOST: ${DOMAINS}
-      LETSENCRYPT_EMAIL: ${EMAIL}
-      WORDPRESS_DB_HOST: db_uls:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: ${DB_WP_PASSWORD}
+wordpress:<br>
+    depends_on:<br>
+      - db_uls<br>    
+    image: wordpress:latest<br>
+    container_name: ${WP_CONTAINER}      <br>
+    hostname: ${WP_CONTAINER}<br>
+    restart: always<br>
+    volumes:<br>
+      - ./html:/var/www/html<br>
+      - ./php.ini:/usr/local/etc/php/conf.d/php.ini<br>
+    expose:<br>
+      - 80<br>
+    restart: always<br>
+    environment:<br>
+      VIRTUAL_HOST: ${DOMAINS}<br>
+      LETSENCRYPT_HOST: ${DOMAINS}<br>
+      LETSENCRYPT_EMAIL: ${EMAIL}<br>
+      WORDPRESS_DB_HOST: db_uls:3306<br>
+      WORDPRESS_DB_USER: wordpress<br>
+      WORDPRESS_DB_PASSWORD: ${DB_WP_PASSWORD}<br>
